@@ -1,5 +1,8 @@
+import 'package:expenses_app/widgets/adaptive_text_button.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'dart:io';
 
 class NewTransaction extends StatefulWidget {
   final Function addTx;
@@ -79,18 +82,12 @@ class _NewTransactionState extends State<NewTransaction> {
                 height: 70,
                 child: Row(
                   children: [
-                    Text(_selectedDate == null
-                        ? 'Kein Datum gewählt'
-                        : 'Gewähltes Datum: ${DateFormat.yMd().format(_selectedDate)}'),
-                    TextButton(
-                      child: Text(
-                        'Wähle Datum',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      style: TextButton.styleFrom(
-                          primary: Theme.of(context).primaryColor),
-                      onPressed: _presentDataPicker,
+                    Expanded(
+                      child: Text(_selectedDate == null
+                          ? 'Kein Datum gewählt'
+                          : 'Gewähltes Datum: ${DateFormat.yMd().format(_selectedDate)}'),
                     ),
+                    AdaptiveTextButton('Wähle Datum', _presentDataPicker),
                   ],
                 ),
               ),
