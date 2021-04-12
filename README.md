@@ -1,6 +1,9 @@
 # expenses_app
 
 A new Flutter project.
+Users can track their expenses on a daily basis.
+The data is displayed as a bar chart.
+Support for android & ios.
 
 ## Getting Started
 
